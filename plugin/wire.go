@@ -216,5 +216,4 @@ func main() {
 
 	skel.PluginMain(cmdAdd, cmdCheck, cmdDel, version.All, bv.BuildString("wire"))
 	fp.Close()
-	os.Exit(0)
 }
