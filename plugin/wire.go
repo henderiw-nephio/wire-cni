@@ -214,12 +214,7 @@ func main() {
 		log.SetOutput(fp)
 	}
 
-	retCode := 0
-	e := skel.PluginMainWithError(cmdAdd, cmdCheck, cmdDel, version.All, bv.BuildString("wire"))
-	if e != nil {
-		log.Errorf("failed to run wire cni: %v", e.Print())
-		retCode = 1
-	}
+	skel.PluginMain(cmdAdd, cmdCheck, cmdDel, version.All, bv.BuildString("ptp"))
 	fp.Close()
-	os.Exit(retCode)
+	os.Exit(0)
 }
