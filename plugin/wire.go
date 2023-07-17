@@ -214,7 +214,7 @@ func main() {
 		log.SetOutput(fp)
 	}
 
-	skel.PluginMain(cmdAdd, cmdCheck, cmdDel, version.All, bv.BuildString("ptp"))
+	skel.PluginMain(cmdAdd, cmdCheck, cmdDel, version.All, bv.BuildString("wire"))
 	fp.Close()
 	os.Exit(0)
 }
