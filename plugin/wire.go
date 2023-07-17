@@ -18,6 +18,10 @@ import (
 
 type NetConf struct {
 	types.NetConf
+	WirePLugin
+}
+
+type WirePLugin struct {
 	// InterfaceName is the network interface name inside the Pod for this attachment.
 	InterfaceName string `json:"interfaceName,omitempty"`
 	MTU           int    `json:"mtu"`
