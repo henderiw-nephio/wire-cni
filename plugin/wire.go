@@ -92,9 +92,13 @@ func cmdAdd(args *skel.CmdArgs) error {
 	}
 	args.IfName = conf.InterfaceName
 
-	result, err := current.NewResultFromResult(conf.PrevResult)
-	if err != nil {
-		return err
+	result := &current.Result{}
+	if conf.PrevResult != nil {
+		var err error
+		result, err = current.NewResultFromResult(conf.PrevResult)
+		if err != nil {
+			return err
+		}
 	}
 
 	netns, err := ns.GetNS(args.Netns)
